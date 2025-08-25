@@ -4,48 +4,39 @@ import { FiPhone, FiMail, FiSend, FiSearch } from "react-icons/fi";
 import { Link } from "react-router";
 
 const Navbar = () => {
- const words = [
-  "Kashmir Group Tour Package",
-  "Shimla Manali Packages",
-  "Kashmir Honeymoon Trip",
-  "Ladakh Adventure Tour"
-];
+const words = [
+    'Search "Kashmir Group Tour Package"',
+    'Search "Shimla Manali Packages"',
+    'Search "Goa Honeymoon Trip"',
+    'Search "Ladakh Adventure Tour"'
+  ];
 
-const [placeholder, setPlaceholder] = useState("Search ");
-const [wordIndex, setWordIndex] = useState(0);
-const [charIndex, setCharIndex] = useState(0);
-const [isDeleting, setIsDeleting] = useState(false);
+  const [placeholder, setPlaceholder] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-useEffect(() => {
-  const currentWord = words[wordIndex];
-  let typingSpeed = isDeleting ? 50 : 100;
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    let typingSpeed = isDeleting ? 50 : 100;
 
-  const timeout = setTimeout(() => {
-    if (!isDeleting && charIndex <= currentWord.length) {
-      // Add letters
-      setPlaceholder(`Search ${currentWord.substring(0, charIndex)}`);
-      setCharIndex((prev) => prev + 1);
-    } else if (isDeleting && charIndex >= 0) {
-      // Remove letters
-      setPlaceholder(`Search ${currentWord.substring(0, charIndex)}`);
-      setCharIndex((prev) => prev - 1);
-    }
+    const timeout = setTimeout(() => {
+      if (!isDeleting && charIndex < currentWord.length) {
+        setPlaceholder((prev) => prev + currentWord[charIndex]);
+        setCharIndex((prev) => prev + 1);
+      } else if (isDeleting && charIndex > 0) {
+        setPlaceholder((prev) => prev.slice(0, -1));
+        setCharIndex((prev) => prev - 1);
+      } else if (!isDeleting && charIndex === currentWord.length) {
+        setTimeout(() => setIsDeleting(true), 1000);
+      } else if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }
+    }, typingSpeed);
 
-    // When word is completely typed
-    if (!isDeleting && charIndex === currentWord.length + 1) {
-      setTimeout(() => setIsDeleting(true), 1000);
-    }
-    // When word is completely deleted
-    else if (isDeleting && charIndex === 0) {
-      setIsDeleting(false);
-      setWordIndex((prev) => (prev + 1) % words.length);
-    }
-  }, typingSpeed);
-
-  return () => clearTimeout(timeout);
-}, [charIndex, isDeleting, wordIndex]);
-
-
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, wordIndex]);
 
   return (
     <nav className="w-full sticky  top-0 z-50 bg-white shadow-md">
@@ -62,7 +53,7 @@ useEffect(() => {
           <input
             type="text"
             placeholder={placeholder}
-            className=" outline-none text-gray-700  text-[8px]  sm:text-sm"
+            className=" flex-1 outline-none text-gray-700  text-[8px]  sm:text-sm"
           />
         </div>
 
