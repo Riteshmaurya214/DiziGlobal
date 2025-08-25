@@ -34,13 +34,13 @@ export default function Carousal() {
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover "
             />
             
             {/* Text Overlay */}
 
                
-            <div className="absolute  w-full  flex flex-col  items-center justify-center md:text-center bottom-10 shadow-md  text-white z-9">
+            <div className="absolute  w-full  flex  flex-col  items-center justify-left md:text-center bottom-10   text-white z-9">
 
               <h2 className="  text-2xl mb-5  md:text-6xl font-bold">{item.title}
                 <p className="text-xl  font-semi-bold md:text-xl mt-3 w-full max-w-full border-t border-b border-dotted border-gray-300 my-1 py-1 ">
