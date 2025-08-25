@@ -5,9 +5,10 @@
       "description": "Enjoy sunny beaches and vibrant nightlife in Goa.",
       "price": 12999,
       "location": "Kashmir",
-      "rating": 4.8,
+      "rating": 5,
       "day":5,
       "night":4,
+      "duration": "5 Days / 4 Nights",
       "image": "https://res.cloudinary.com/dr267iyg8/image/upload/v1751546477/maximtrip/cfhqx7thntqyr99oucjr.jpg"
     },
     {
@@ -16,9 +17,10 @@
       "description": "Experience the beauty of snow-capped mountains and valleys.",
       "price": 15999,
       "location": "Kashmir",
-      "rating": 4.7,
+      "rating": 4,
        "day":6,
       "night":5,
+       " duration": "6 Days / 5 Nights",
       "image": "https://res.cloudinary.com/dr267iyg8/image/upload/v1752056442/maximtrip/wc762m2wwmwbn5nea3pl.png"
     },
     {
@@ -27,9 +29,10 @@
       "description": "Relax in houseboats and explore lush green landscapes.",
       "price": 18999,
       "location": "Kashmir",
-      "rating": 4.9,
+      "rating": 2,
        "day":8,
       "night":7,
+       " duration": "8 Days / 7 Nights",
       "image": "https://res.cloudinary.com/dr267iyg8/image/upload/v1751546809/maximtrip/etg69mvhrt7m0nrajvnk.jpg"
     },
    
@@ -39,9 +42,10 @@
       "description": "Snowy landscapes and beautiful gardens await you.",
       "price": 24999,
       "location": "Kashmir",
-      "rating": 4.9,
+      "rating": 3,
        "day":3,
       "night":2,
+       " duration": "3 Days / 2 Nights",
       "image": "https://res.cloudinary.com/dr267iyg8/image/upload/v1751546165/maximtrip/o3ngiagi5i1ymwviltte.jpg"
     }
       ,{
@@ -50,9 +54,10 @@
       "description": "Experience the beauty of snow-capped mountains and valleys.",
       "price": 15999,
       "location": "Kashmir",
-      "rating": 4.7,
+      "rating": 4,
        "day":6,
       "night":5,
+       " duration": "6 Days / 5 Nights",
       "image": "https://res.cloudinary.com/dr267iyg8/image/upload/v1752056442/maximtrip/wc762m2wwmwbn5nea3pl.png"
     }
   ]

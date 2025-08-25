@@ -1,7 +1,12 @@
 import React from "react";
 import { FiPhone } from "react-icons/fi";
+import { useNavigate } from "react-router";
+
 
 export default function CartCategory({item,idx}) {
+
+  const Navigate = useNavigate();
+
   return (
     <div key={idx} className=" transition-all duration-300 hover:shadow-xl shadow-md rounded-xl bg-white transform hover:-translate-y-2">
       {/* Image Section */}
@@ -9,7 +14,9 @@ export default function CartCategory({item,idx}) {
         <img
           src={item.image}
           alt={item.headline}
-          className="w-full h-52 object-cover object-top rounded-xl"
+          className="w-full h-52 object-cover object-top rounded-xl cursor-pointer"
+          onClick={()=> Navigate(`/category/${item.id}`)}
+
         />
       </div>
 

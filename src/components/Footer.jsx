@@ -44,8 +44,7 @@ export default function () {
            
         </div>
 
-        <StickyFooter/>
-
+    
        
 
       </footer>

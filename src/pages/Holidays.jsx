@@ -84,6 +84,8 @@ export default function Holidays() {
     <div className=" z-50 hidden md:block text-white bg-red-600 p-4 fixed bottom-6 right-6 rounded-full opacity-98 animate-updown ">
         <IoChatbubbleOutline  className="text-2xl  " />
     </div>
+        <StickyFooter/>
+
     </div>
   );
 }

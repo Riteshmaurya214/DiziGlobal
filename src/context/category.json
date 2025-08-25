@@ -1,6 +1,8 @@
 [
   {
     "id": 1,
+     "rating": 1,
+    "location": "Kashmir",
     "slug": "kashmir-tour-packages",
     "categoryName": "Kashmir Tour Packages",
     "headline": "Kashmir Tour Packages",
@@ -10,6 +12,8 @@
   },
   {
     "id": 2,
+       "rating": 4,
+     "location": "Kashmir",
     "slug": "kashmir-honeymoon-packages",
     "categoryName": "Kashmir Honeymoon Packages",
     "headline": "Kashmir Honeymoon Packages",
@@ -19,6 +23,8 @@
   },
   {
     "id": 3,
+       "rating": 3,
+     "location": "Kashmir",
     "slug": "kashmir-family-tour-packages",
     "categoryName": "Kashmir Family Tour Packages",
     "headline": "Kashmir Family Tour Packages",
@@ -28,6 +34,8 @@
   },
   {
     "id": 4,
+       "rating": 2,
+     "location": "Kashmir",
     "slug": "kashmir-group-tour-packages",
     "categoryName": "Kashmir Group Tour Packages",
     "headline": "Kashmir Group Tour Packages",
@@ -37,6 +45,8 @@
   },
   {
     "id": 5,
+       "rating": 5,
+     "location": "Kashmir",
     "slug": "budget-kashmir-tour-packages",
     "categoryName": "Budget Kashmir Tour Packages",
     "headline": "Budget Kashmir Tour Packages",

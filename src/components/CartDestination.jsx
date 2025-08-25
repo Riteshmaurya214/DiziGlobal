@@ -1,12 +1,16 @@
 import React from "react";
 import data from "../context/data.json";
+import { useNavigate } from "react-router";
+
 
 export default function Card({ item, idx }) {
+
+  const Navigate = useNavigate();
   return (
     <div
       key={idx}
-      className="relative group rounded-xl overflow-hidden "
-    
+      className="relative group rounded-xl overflow-hidden cursor-pointer "
+    onClick = {()=> Navigate(`/destination/${item.id}`)}
     >
       {/* Image and hover scale */}
       <div className="transition-transform duration-700 group-hover:scale-110">
@@ -14,6 +18,7 @@ export default function Card({ item, idx }) {
           src={item.image}
           alt="rtm"
           className="rounded-xl w-full h-[256px] object-cover"
+          
         />
 
         {/* Dark overlay on hover */}

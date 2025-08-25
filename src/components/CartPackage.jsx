@@ -3,14 +3,19 @@ import data from "../context/data.json"
 import { GoClock } from "react-icons/go";
 import { IoLocationOutline } from "react-icons/io5";
 import { FiPhone } from "react-icons/fi";
+import { Navigate, useNavigate } from "react-router";
 
 export default function CartPackage ({item,idx}) {
+
+    const Navigate = useNavigate();
     return (
         <div className="bg-white  border rounded-xl border-gray-200 shadow-md 
-        hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
-           <div>
+        hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300" >
+           <div  >
                   <img src={item.image} alt="rtm"
-                className=" w-full h-52 object-cover object-top rounded-t-xl " />
+                className=" w-full cursor-pointer h-52 object-cover object-top rounded-t-xl " 
+                onClick = {()=> Navigate(`/packages/${item.id}`) }   />
+                
            </div>
           
      
