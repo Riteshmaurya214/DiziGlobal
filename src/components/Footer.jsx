@@ -34,8 +34,8 @@ export default function () {
                 </div>
             </div>
             
-            <div className="flex ">
-                <h3 className="text-gray-600" >Copyright &copy; 2021-2025</h3> 
+            <div className="flex  text-xs sm:text-sm md:text-md mb-6 md:mb-0">
+                <h3 className="text-gray-600 " >Copyright &copy; 2021-2025</h3> 
                 <span className="font-bold ml-1"> MaximTrip.</span>
                 <h3 className="ml-1 text-gray-600"> All Right Reserved </h3> 
             
