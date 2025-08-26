@@ -14,7 +14,7 @@ import StickyFooter from "./StickyFooter";
 export default function () {
     return (
         <>
-        <div className="border-2  my-6 border-b-red-500 w-full "></div>
+        <div className="border-2  mb-6 border-b-red-500 w-full "></div>
         <footer className="mx-4">
             
      

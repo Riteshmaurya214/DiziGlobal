@@ -2,10 +2,17 @@ import React from "react";
 import { useParams } from "react-router";
 import c from "../context/data.json";
 import EnquiryForm from "../components/EnquiryForm";  // 👈 import kiya
+import { useEffect } from "react";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const product = c.find((item) => item.id === parseInt(id));
+
+   //  Scroll to Top on Component Mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   const tabs = [
     { name: "Overview", active: true },

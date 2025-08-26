@@ -2,9 +2,26 @@ import React, { useState, useEffect } from "react";
 import data from "../context/data.json";
 import { FaCircleChevronRight, FaCircleChevronLeft } from "react-icons/fa6";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import EnquiryPopup from "./EnquiryPopup";
 
 export default function Carousal() {
+
   const [slide, setSlide] = useState(0);
+  const [isOpen , setIsOpen] = useState(false)
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  useEffect(() => {
+  if (isOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+}, [isOpen]);
+
 
   const handleNext = () => {
     setSlide(slide === data.length - 1 ? 0 : slide + 1);
@@ -15,10 +32,17 @@ export default function Carousal() {
   };
 
   // Auto scroll 
-  useEffect(() => {
+  // useEffect(() => {
+  //   const interval = setInterval(handleNext, 5000);
+  //   return () => clearInterval(interval);
+  // }, [slide]);
+
+useEffect(() => {
+  if (!isModalOpen) {
     const interval = setInterval(handleNext, 5000);
     return () => clearInterval(interval);
-  }, [slide]);
+  }
+}, [slide, isModalOpen]);
 
   return (
     <div className="relative w-full mb-10 h-[90vh] md:h-[85vh] overflow-hidden  ">
@@ -60,9 +84,14 @@ export default function Carousal() {
                 )}
               </div>
              
-              <button className="mt-4 z-9 bg-red-500 hidden md:block  px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-red-600  ">
+              <button className="mt-4 z-9 bg-red-500 hidden md:block  px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-red-600  "
+                      onClick={openModal}
+
+              >
                 Connect With Expert
               </button>
+               {/* Pass props to EnquiryPopup */}
+              <EnquiryPopup isOpen={isModalOpen} onClose={closeModal} />
             </div>
                 </div>
           

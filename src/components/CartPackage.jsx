@@ -5,11 +5,11 @@ import { IoLocationOutline } from "react-icons/io5";
 import { FiPhone } from "react-icons/fi";
 import { Navigate, useNavigate } from "react-router";
 
-export default function CartPackage ({item,idx}) {
+export default function CartPackage ({item,idx ,openPopup}) {
 
     const Navigate = useNavigate();
     return (
-        <div className="bg-white  border rounded-xl border-gray-200 shadow-md 
+        <div key={idx} className="bg-white  border rounded-xl border-gray-200 shadow-md 
         hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300" >
            <div  >
                   <img src={item.image} alt="rtm"
@@ -42,7 +42,9 @@ export default function CartPackage ({item,idx}) {
 
             <div className="flex items-center  gap-2"> 
                  <FiPhone size={41} className=" p-2   text-red-600 border-2 border-red-600  rounded-bl-xl " />
-                <button className="w-full bg-red-700 hover:bg-red-800 text-white py-2 rounded-lg font-medium text-base shadow rounded-br-xl">
+                <button className="w-full bg-red-700 hover:bg-red-800 text-white py-2 rounded-lg font-medium text-base shadow rounded-br-xl"
+                 onClick={() => openPopup(item)} // Call parent to open popup
+                >
             Request Callback
           </button>
             </div>

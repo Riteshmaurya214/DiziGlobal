@@ -9,7 +9,7 @@ import { GoArrowRight } from "react-icons/go";
 
 
 
-const SwiperSection = ({ data, prev, next, CartNameOne, CartNameTwo ,CardComponent , BgColor  , ViewAll , SpeedSwip }) => {
+const SwiperSection = ({ data, prev, next, CartNameOne, CartNameTwo ,CardComponent , BgColor  , ViewAll , SpeedSwip ,openPopup }) => {
   return (
     <>
     <div className={`relative w-full  bg-gray-5${BgColor}`}>
@@ -51,7 +51,7 @@ const SwiperSection = ({ data, prev, next, CartNameOne, CartNameTwo ,CardCompone
         >
           {data.map((item, idx) => (
             <SwiperSlide key={idx}>
-              <CardComponent item={item} idx={idx}/>
+              <CardComponent item={item} idx={idx} openPopup={openPopup}/>
             </SwiperSlide>
           ))}
         </Swiper>
